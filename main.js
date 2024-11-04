@@ -13,7 +13,9 @@ const showingText = document.querySelector("#showing-text")
 //Form elements
 const merchantForm = document.querySelector("#new-merchant-form")
 const newMerchantName = document.querySelector("#new-merchant-name")
+const itemForm = document.querySelector("#new-item-form")
 const submitMerchantButton = document.querySelector("#submit-merchant")
+const submitItemButton = document.querySelector("#submit-item")
 
 // Event Listeners
 merchantsView.addEventListener('click', (event) => {
@@ -24,11 +26,22 @@ merchantsNavButton.addEventListener('click', showMerchantsView)
 itemsNavButton.addEventListener('click', showItemsView)
 
 addNewButton.addEventListener('click', () => {
-  show([merchantForm])
+  if (addNewButton.dataset.state === 'merchant') {
+    show([merchantForm])
+    hide([itemForm])
+  }
+  else if (addNewButton.dataset.state === 'item') {
+    show([itemForm])
+    hide([merchantForm])
+  }
 })
 
 submitMerchantButton.addEventListener('click', (event) => {
   submitMerchant(event)
+})
+
+submitItemButton.addEventListener('click', (event) => {
+  submitItemButton(event)
 })
 
 //Global variables
@@ -123,6 +136,24 @@ function submitMerchant(event) {
     })
 }
 
+function submitItem(event) {
+  event.preventDefault()
+  var newItem = {
+    name: newItemName.value,
+    description: newItemDescription.value,
+    unit_price: parseFloat(newItemPrice.value)
+  }
+  postData('items', newItem)
+  .then(postedItem => {
+    items.push(postedItem.data)
+    displayAddedItem(postedItem.data)
+    newItemName.value = ''
+    newItemPrice.value = ''
+    showStatus('Success! Item added!', true)
+    hide([itemForm])
+  })
+}
+
 // Functions that control the view 
 function showMerchantsView() {
   showingText.innerText = "All Merchants"
@@ -137,8 +168,8 @@ function showItemsView() {
   showingText.innerText = "All Items"
   addRemoveActiveNav(itemsNavButton, merchantsNavButton)
   addNewButton.dataset.state = 'item'
-  show([itemsView])
-  hide([merchantsView, merchantForm, addNewButton])
+  show([itemsView, addNewButton])
+  hide([merchantsView, merchantForm, itemForm])
   displayItems(items)
 }
 
