@@ -91,6 +91,12 @@ main {
   color: #ccdbfd;
 }
 
+#add-new-button:hover {
+  background-color: darkgrey;
+  color: white;
+  transform: translateX(5px);
+}
+
 #showing-text {
   font-size: 1.3em;
   color: navy;
@@ -227,12 +233,6 @@ form {
 .display-options > button {
   margin-left: 15px;
   cursor: pointer;
-}
-
-.display-options > button:hover {
-  background-color: darkgrey;
-  color: white;
-  transform: translateX(5px);
 }
 
 .success {
