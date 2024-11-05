@@ -17,20 +17,30 @@ body {
 /* SIDEBAR */
 
 aside {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
   width: 25%;
   margin: none;
 }
 
 header {
+  border-radius: 75px;
   text-align: center;
   margin: 10px 10px 80px 10px;
-  background-color: black;
-  color: white;
+  background-color: navy;
+  color: #ccdbfd;
   padding: 15px;
 }
 
 h1 {
   font-size: 2.5em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#header-text {
+  font-size: 0.8em;
 }
 
 h1, 
@@ -47,7 +57,8 @@ nav {
 nav > button {
   border: none;
   margin-bottom: 20px;
-  background-color: lightgrey;
+  background-color: navy;
+  color: #ccdbfd;
   width: 65%;
   text-align: center;
   border-radius: 10px 0px 0px 10px;
@@ -55,7 +66,7 @@ nav > button {
 }
 
 .active-nav {
-  background-color: white;
+  background-color: #001c55;
 }
 
 /* MAIN */
@@ -66,15 +77,58 @@ main {
   background-color: rgba(85, 101, 118, 0.545);
 }
 
+#add-new-button {
+  border: none;
+  border-radius: 3px;
+  background-color: navy;
+  color: #ccdbfd;
+}
+
+#showing-text {
+  font-size: 1.3em;
+  color: navy;
+}
+
 form {
   display: flex;
 }
 
 .merchant {
   display: flex;
-  background-color: lightgray;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  background-color: #ccdbfd;
+  justify-content: space-evenly;
+  border-radius: 5px; 
+  box-shadow: 5px 5px navy;
   margin: 10px;
   padding: 5px;
+}
+
+.view-merchant-items {
+  color: #ccdbfd;
+  background-color: navy;
+}
+
+.edit-merchant {
+  color: #ccdbfd;
+  background-color: navy;
+}
+
+.submit-merchant-edits {
+  color: #ccdbfd;
+  background-color: navy;
+}
+
+.discard-merchant-edits {
+  color: #ccdbfd;
+  background-color: navy;
+}
+
+.delete-merchant {  
+  color: #ccdbfd;
+  background-color: navy;
 }
 
 .view {
@@ -129,13 +183,6 @@ form {
   align-items: center;
 }
 
-.merchant {
-  width: 98%;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .view-items-button {
   padding: 5px;
   margin-right: 10px;
@@ -169,5 +216,3 @@ form {
 .hidden {
   display: none;
 } 
-  
-co
