@@ -41,7 +41,7 @@ submitMerchantButton.addEventListener('click', (event) => {
 })
 
 submitItemButton.addEventListener('click', (event) => {
-  submitItemButton(event)
+  submitItem(event)
 })
 
 //Global variables
@@ -189,11 +189,10 @@ function displayItems(items) {
   firstHundredItems.forEach(item => {
     let merchant = findMerchant(item.attributes.merchant_id).attributes.name
     itemsView.innerHTML += `
-     <article class="item" id="item-${item.id}">
-          <img src="" alt="">
-          <h2>${item.attributes.name}</h2>
-          <p>${item.attributes.description}</p>
-          <p>$${item.attributes.unit_price}</p>
+        <article class="item" id="item-${item.id}">
+          <h2 class="item-name">${item.attributes.name}</h2>
+          <p class="item-description">${item.attributes.description}</p>
+          <p class="item-price">$${item.attributes.unit_price}</p>
           <p class="merchant-name-in-item">Merchant: ${merchant}</p>
         </article>
     `
