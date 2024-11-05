@@ -185,18 +185,23 @@ function showMerchantItemsView(id, items) {
 // Functions that add data to the DOM
 function displayItems(items) {
   itemsView.innerHTML = ''
-  let firstHundredItems = items.slice(0, 99)
-  firstHundredItems.forEach(item => {
-    let merchant = findMerchant(item.attributes.merchant_id).attributes.name
-    itemsView.innerHTML += `
-        <article class="item" id="item-${item.id}">
-          <h2 class="item-name">${item.attributes.name}</h2>
-          <p class="item-description">${item.attributes.description}</p>
-          <p class="item-price">$${item.attributes.unit_price}</p>
-          <p class="merchant-name-in-item">Merchant: ${merchant}</p>
-        </article>
-    `
-  })
+
+  if(items.length == 0){
+      itemsView.innerHTML += 'No Items Yet For This Merchant.'
+  } else {
+    let firstHundredItems = items.slice(0, 99)
+    firstHundredItems.forEach(item => {
+      let merchant = findMerchant(item.attributes.merchant_id).attributes.name
+      itemsView.innerHTML += `
+          <article class="item" id="item-${item.id}">
+            <h2 class="item-name">${item.attributes.name}</h2>
+            <p class="item-description">${item.attributes.description}</p>
+            <p class="item-price">$${item.attributes.unit_price}</p>
+            <p class="merchant-name-in-item">Merchant: ${merchant}</p>
+          </article>
+      `
+    })
+  }
 }
 
 function displayMerchants(merchants) {

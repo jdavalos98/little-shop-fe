@@ -241,6 +241,18 @@ form {
   transform: translateX(2px);
 }
 
+.submit-merchant-edits:hover {
+  background-color: darkgrey;
+  color: white;
+  transform: translateX(2px);
+}
+
+.discard-merchant-edits:hover {
+  background-color: darkgrey;
+  color: white;
+  transform: translateX(2px);
+}
+
 .success {
   color: green;
 }
