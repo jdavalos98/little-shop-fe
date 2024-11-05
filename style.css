@@ -235,6 +235,12 @@ form {
   cursor: pointer;
 }
 
+.submit:hover {
+  background-color: darkgrey;
+  color: white;
+  transform: translateX(2px);
+}
+
 .success {
   color: green;
 }
