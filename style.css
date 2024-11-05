@@ -52,6 +52,13 @@ nav > button {
   text-align: center;
   border-radius: 10px 0px 0px 10px;
   padding: 20px;
+  cursor: pointer;
+}
+
+nav > button:hover {
+  background-color: darkgrey;
+  color: white;
+  transform: translateX(5px);
 }
 
 .active-nav {
