@@ -235,15 +235,7 @@ function addRemoveActiveNav(nav1, nav2) {
 }
 
 function filterByMerchant(merchantId) {
-  const specificMerchantItems = []
-
-  for (let i = 0; i < items.length; i++) {
-    if (items[i].attributes.merchant_id === parseInt(merchantId)) {
-      specificMerchantItems.push(items[i])
-    }
-  }
-
-  return specificMerchantItems
+  return items.filter(item => item.attributes.merchant_id === parseInt(merchantId))
 }
 
 function findMerchant(id) {
