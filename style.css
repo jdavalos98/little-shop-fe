@@ -143,6 +143,24 @@ form {
   align-items: center;
 }
 
+.view-merchant-items:hover {
+  background-color: darkgrey;
+  color: white;
+  transform: translateX(2px);
+}
+
+.edit-merchant:hover {
+    background-color: darkgrey;
+    color: white;
+    transform: translateX(2px);
+}
+
+.delete-merchant:hover {
+  background-color: darkgrey;
+  color: white;
+  transform: translateX(2px);
+}
+
 .view-items-button {
   padding: 5px;
   margin-right: 10px;
@@ -161,6 +179,13 @@ form {
 
 .display-options > button {
   margin-left: 15px;
+  cursor: pointer;
+}
+
+.display-options > button:hover {
+  background-color: darkgrey;
+  color: white;
+  transform: translateX(5px);
 }
 
 .success {
@@ -176,5 +201,3 @@ form {
 .hidden {
   display: none;
 } 
-  
-co
