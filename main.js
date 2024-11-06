@@ -16,6 +16,9 @@ const newMerchantName = document.querySelector("#new-merchant-name")
 const itemForm = document.querySelector("#new-item-form")
 const submitMerchantButton = document.querySelector("#submit-merchant")
 const submitItemButton = document.querySelector("#submit-item")
+const newItemName = document.querySelector("#new-item-name");
+const newItemDescription = document.querySelector("#new-item-description");
+const newItemPrice = document.querySelector("#new-item-price");
 
 // Event Listeners
 merchantsView.addEventListener('click', (event) => {
@@ -144,6 +147,7 @@ function submitMerchant(event) {
 
 function submitItem(event) {
   event.preventDefault()
+  console.log('You submitted an item')
   var newItem = {
     name: newItemName.value,
     description: newItemDescription.value,
