@@ -1,51 +1,34 @@
-# Little Shop | Group Project | Frontend Starter Repo
-
-This Little Shop FE Group Project Boilerplate is built to consume and display the data from the BE Rails API built in the Mod 2 Group Project.  
-
-Your group will pull down and continue building out your own version of this front end application.
-
-## Set Up Instructions
-
-**Note:** Do **not** clone this repo into your backend repo. Put it somewhere else as a stand alone. The BE and FE repos will remain two separate repos and you will submit the links to each.  
-
-1. Fork repo
-1. Clone forked repo and rename it `git clone <repo> <new name>` (Do not clone this into your BE repo. See note above.)
-1. `cd` into cloned repo
-1. Run `npm install`
-1. Run `npm run dev` to start developing.
-  1. You'll see in the terminal that the project has opened at "http://localhost:5173/"
-
-
-## Notes
-
-This FE application is build to consume the data from your Rails API.  In order for it to work, you must have your Rails API running on localhost:3000. You will see fetch errors when running the FE without the BE API up and running.  
-
-Follow the directions in the FE requirements portion of the Little Shop group project spec. When you are finished with the FE work, update this README to remove the current content and follow the template below.  
-
-______________________________________________________  
-# README Template  
-Before turning this project in, erase this line and everything above it and fill in the info below.  
-______________________________________________________  
 
 # Hang in There  
 
 ### Abstract:
-(Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
+This app allows us to display a variety of merchants and the items they individually carry. It allows us to add items, merchants, as well as items to merchant.
 
 ### Installation Instructions:
-(What steps does a person have to take to get your app cloned down and running?)
+Installation Instructions:
+Clone the repository: git clone <repo-url>
+Navigate to the project directory: cd <project-directory>
+Install dependencies: npm install
+Start the development server: npm start
+The app should now be running on http://localhost:3000.
 
 ### Preview of App:
-(Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off. gifs preferred!)
+![alt text](image.png)
 
 ### Context:
-(Give some context for the project here. How long did you have to work on it? What specific work/improvements did you contribute to this FE application?)
+This project was completed over the course of eight days.
 
 ### Contributors:
-(Who worked on this application? Link to your GitHub. Consider also providing LinkedIn link)
+- [Seth Verrill](https://github.com/sethverrill)
+- [Alora Riley](https://github.com/aloraalee)
+- [Jose Davalos](https://github.com/jdavalos98)
+- [Kaelin Salazar](https://github.com/kaelinpsalazar)
+
 
 ### Learning Goals:
-(What were the learning goals of this project? What tech did you work with?)
+We were trying to work on our CSS abilities and Active Record query methods as thorough as possible. 
+All of us were able to partcipate in doing all aspects of the project.
 
 ### Wins + Challenges:
-(What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
+We feel really good about how things turned out. Getting the testing to work across our spec tests as well as the required tests in Postman was a big challenge.
+If we had more time, our front end layout would be a bit more stylish, but overall we feel like we succeeded given our time constraints.
