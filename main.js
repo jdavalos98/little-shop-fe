@@ -9,6 +9,7 @@ const merchantsNavButton = document.querySelector("#merchants-nav")
 const itemsNavButton = document.querySelector("#items-nav")
 const addNewButton = document.querySelector("#add-new-button")
 const showingText = document.querySelector("#showing-text")
+const sortButton = document.querySelector("#sort-button")
 
 //Form elements
 const merchantForm = document.querySelector("#new-merchant-form")
@@ -43,6 +44,10 @@ submitMerchantButton.addEventListener('click', (event) => {
 submitItemButton.addEventListener('click', (event) => {
   submitItem(event)
 })
+
+sortButton.addEventListener('click', (event) => {
+  sortMerchants();
+});
 
 //Global variables
 let merchants;
@@ -80,7 +85,7 @@ function deleteMerchant(event) {
     .then(() => {
       let deletedMerchant = findMerchant(id)
       let indexOfMerchant = merchants.indexOf(deletedMerchant)
-      merchants.splice(indexOfMerchant, 1)
+      merchants.splice(indexOfMerchant, 1)  
       displayMerchants(merchants)
       showStatus('Success! Merchant removed!', true)
     })
@@ -270,4 +275,20 @@ function filterByMerchant(merchantId) {
 
 function findMerchant(id) {
   return merchants.find(merchant => parseInt(merchant.id) === parseInt(id))
+}
+
+function sortMerchants() {
+  merchants.sort((a, b) => {
+    let nameA = a.attributes.name;
+    let nameB = b.attributes.name;
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+    return 0;
+  });
+
+  displayMerchants(merchants);
 }
