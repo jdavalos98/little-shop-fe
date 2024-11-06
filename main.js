@@ -100,9 +100,15 @@ function submitMerchantEdits(event) {
   event.preventDefault();
   const article = event.target.closest("article")
   const editInput = article.querySelector(".edit-merchant-input")
+  const merchantNameElement = article.querySelector(".merchant-name");
   const id = article.id.split('-')[1]
-
   const patchBody = { name: editInput.value }
+
+  merchantNameElement.textContent = patchBody.name;
+
+  hide([editInput, article.querySelector(".submit-merchant-edits"), article.querySelector(".discard-merchant-edits")]);
+  show([merchantNameElement]);
+
   editData(`merchants/${id}`, patchBody)
     .then(patchResponse => {
       let merchantToUpdate = findMerchant(patchResponse.data.id)
