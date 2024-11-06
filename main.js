@@ -17,6 +17,10 @@ const newMerchantName = document.querySelector("#new-merchant-name")
 const itemForm = document.querySelector("#new-item-form")
 const submitMerchantButton = document.querySelector("#submit-merchant")
 const submitItemButton = document.querySelector("#submit-item")
+const newItemName = document.querySelector("#new-item-name");
+const newItemDescription = document.querySelector("#new-item-description");
+const newItemPrice = document.querySelector("#new-item-price");
+const newMerchantID = document.querySelector("#new-merchant-id")
 
 // Event Listeners
 merchantsView.addEventListener('click', (event) => {
@@ -149,10 +153,12 @@ function submitMerchant(event) {
 
 function submitItem(event) {
   event.preventDefault()
+  console.log('You submitted an item')
   var newItem = {
     name: newItemName.value,
     description: newItemDescription.value,
-    unit_price: parseFloat(newItemPrice.value)
+    unit_price: parseFloat(newItemPrice.value),
+    merchant_id: newMerchantID.value
   }
   postData('items', newItem)
   .then(postedItem => {
@@ -254,6 +260,13 @@ function displayAddedMerchant(merchant) {
             <button class="delete-merchant icon">🗑️</button>
           </div>
         </article>`)
+}
+
+function displayAddedItem(item) {
+  itemsView.insertAdjacentHTML('beforeend', 
+  `<article class="item" id="item-${item.id}">
+      <h3 class="item-name">${item.attributes.name}</h3>
+    </article>`)
 }
 
 function displayMerchantItems(event) {
